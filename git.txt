@@ -1,0 +1,62 @@
+git init
+
+git status
+
+git add octocat.txt (or '*.txt' or .. add files to staging area)
+
+git commit (we store them in the local repository)
+
+git log --summary
+
+git remote add origin https://github.com/try-git/try_git.git
+
+The name of our remote is origin and the default local branch name is master. The -u tells Git to remember the parameters, so that next time we can simply run git push and Git will know what to do. Go ahead and push it!
+git push -u origin master
+
+We can check for changes on our GitHub repository and pull down any new changes by running:
+git pull origin master
+
+Let's take a look at what is different from our last commit by using the git diff command
+git diff HEAD (That command compares what is in your working directory with what is in your staging area.)
+use ^xqq for exit diff editor
+
+git reset HEAD
+TO unstage all new/modified files
+
+You can unstage files by using the git reset command
+git reset octofamily/octodog.txt
+
+Files can be changed back to how they were at the last commit by using the command:
+git checkout -- <target> (git checkout -- octocat.txt)
+
+let's create a branch called clean_up, where we'll do all the work. You'd separate the code base into two "snapshots" (branches) and work on and commit to them separately. As soon as one was ready, you might merge this branch back into the master branch and push it to the remote server.
+git branch clean_up
+
+Now if you type 'git branch' you'll see two local branches:
+a main branch named master and your new branch named clean_up. You can switch branches using the git checkout <branch> command
+
+'git rm' command which will not only remove the actual files from disk, but will also stage the removal of the files for us
+
+Pull Requests
+If you're hosting your repo on GitHub, you can do something called a pull request.
+A pull request allows the boss of the project to look through your changes and make comments before deciding to merge in the change. It's a really great feature that is used all the time for remote workers and open-source projects.
+Check out out the pull request help page for more information.
+
+when you have to merge your changes from the clean_up branch into the master branch.
+git merge clean_up
+
+delete the clean_up branch now:
+git branch -d clean_up
+
+push everything you've been working on to your remote repository
+git push
+
+===================================
+http://blip.tv/activetuts/flash-for-android-git-introduction-1-3959928
+
+
+This will give read-only access to the repository at github.com
+git clone git://github.com/YOUR_GITHUB_USERNAME/moodle.git LOCALDIR
+
+This will give you read and write access to the repository on github.com.
+git clone git@github.com:YOUR_GITHUB_USERNAME/moodle.git LOCALDIR
